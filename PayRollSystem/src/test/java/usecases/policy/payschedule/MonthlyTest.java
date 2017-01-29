@@ -1,10 +1,9 @@
 package usecases.policy.payschedule;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 import java.text.ParseException;
-import java.util.Calendar;
-import java.util.Date;
+import java.time.LocalDate;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -19,19 +18,16 @@ public class MonthlyTest {
 	
 	@Test
 	public void shouldPayToEmployee() throws ParseException{
-		 Date date = new Date();
-         assertTrue(monthly.shouldPay(date));
+		LocalDate today = LocalDate.now();
+		monthly.setLastPayment(today);
+        assertTrue(monthly.shouldPay(today));
 	}
 
 	@Test
 	public void shouldNotPayToEmployee() throws ParseException{
-		Calendar myCal = Calendar.getInstance();
-		myCal.set(Calendar.YEAR, 2016);
-		myCal.set(Calendar.MONTH, 12);
-		myCal.set(Calendar.DAY_OF_MONTH, 1);
-		
-		monthly.setLastPayment(myCal.getTime());
-        assertTrue(monthly.shouldPay(new Date()));
+		LocalDate today = LocalDate.now();
+		monthly.setLastPayment(LocalDate.of(2016, 01, 12));
+        assertFalse(monthly.shouldPay(today));
 	}
 
 }

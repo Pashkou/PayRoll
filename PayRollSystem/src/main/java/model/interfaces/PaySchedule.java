@@ -1,7 +1,7 @@
 package model.interfaces;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public interface PaySchedule {
-	public boolean shouldPay(Date date);
+	public boolean shouldPay(LocalDate date);
 }
