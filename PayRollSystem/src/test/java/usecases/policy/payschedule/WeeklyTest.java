@@ -8,25 +8,27 @@ import java.time.LocalDate;
 import org.junit.Before;
 import org.junit.Test;
 
-public class BiWeeklyTest {
-	private BiWeekly beWeekly;
+public class WeeklyTest {
+
+	private Weekly weekly;
 	
 	@Before
 	public void setUp(){
-		beWeekly = new BiWeekly();
+		weekly = new Weekly();
 	}
 	
 	@Test
 	public void shouldPayToEmployee() throws ParseException{
 		LocalDate today = LocalDate.now();
-		beWeekly.setLastPayment(LocalDate.of(2017, 01, 15));
-        assertTrue(beWeekly.shouldPay(today));
+		weekly.setLastPayment(LocalDate.of(2017, 01, 21));
+        assertTrue(weekly.shouldPay(today));
 	}
 	
 	@Test
 	public void shouldNotPayToEmployee() throws ParseException{
 		LocalDate today = LocalDate.now();
-		beWeekly.setLastPayment(LocalDate.of(2017, 01, 17));
-        assertFalse(beWeekly.shouldPay(today));
+		weekly.setLastPayment(LocalDate.of(2017, 01, 27));
+        assertFalse(weekly.shouldPay(today));
 	}
+
 }
