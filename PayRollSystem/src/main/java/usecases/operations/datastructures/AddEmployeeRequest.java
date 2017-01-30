@@ -11,13 +11,10 @@ public abstract class AddEmployeeRequest {
 	private String firstName;
 	private String lastName;
 	
-	public AddEmployeeRequest(PayDisposition payDisposition, SetUnionMembeshipRequest setUnionMembeshipRequest,
-			String firstName, String lastName) {
+	public AddEmployeeRequest(PayDisposition payDisposition, SetUnionMembeshipRequest setUnionMembeshipRequest) {
 		super();
 		this.payDisposition = payDisposition;
 		this.setUnionMembeshipRequest = setUnionMembeshipRequest;
-		this.firstName = firstName;
-		this.lastName = lastName;
 	}
 
 	public PayDisposition getPayDisposition() {
@@ -34,5 +31,13 @@ public abstract class AddEmployeeRequest {
 
 	public String getLastName() {
 		return lastName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
 }

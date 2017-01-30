@@ -12,8 +12,8 @@ public class AddHourlyEmployeeRequest extends AddEmployeeRequest {
 	private PayType payType = new Hourly();
 	private PaySchedule paySchedule = new Weekly();
 	
-	public AddHourlyEmployeeRequest(PayDisposition payDisposition, SetUnionMembeshipRequest setUnionMembeshipRequest, String firstName, String lastName) {
-		super(payDisposition, setUnionMembeshipRequest, firstName, lastName);
+	public AddHourlyEmployeeRequest(PayDisposition payDisposition, SetUnionMembeshipRequest setUnionMembeshipRequest) {
+		super(payDisposition, setUnionMembeshipRequest);
 	}
 
 	public PayType getPayType() {

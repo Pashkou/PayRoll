@@ -1,14 +1,19 @@
 package usecases.operations;
 
+import usecases.operations.datastructures.AddEmployeeRequest;
 import usecases.operations.datastructures.AddHourlyEmployeeRequest;
 
-public class AddHourlyEmployeeUsecase extends AddEmployeeUsecase{
+public class AddHourlyEmployeeUsecase implements UseCase{
 	
-	public AddHourlyEmployeeUsecase(AddHourlyEmployeeRequest addHourlyEmployeeRequest) {
-		super(
-				addHourlyEmployeeRequest.getPayDisposition(),
-				addHourlyEmployeeRequest.getPaySchedule(),
-				addHourlyEmployeeRequest.getPayType());
+	public AddHourlyEmployeeUsecase() {
+
 	}
+
+
+	public void execute(AddEmployeeRequest addEmployeeRequest) {
+		// TODO Auto-generated method stub
+		
+	}
+
 	
 }

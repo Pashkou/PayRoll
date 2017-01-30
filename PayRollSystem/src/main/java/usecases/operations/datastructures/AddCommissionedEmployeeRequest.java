@@ -14,7 +14,7 @@ public class AddCommissionedEmployeeRequest extends AddEmployeeRequest {
 	
 	public AddCommissionedEmployeeRequest(PayDisposition payDisposition,
 			SetUnionMembeshipRequest setUnionMembeshipRequest, String firstName, String lastName) {
-		super(payDisposition, setUnionMembeshipRequest, firstName, lastName);
+		super(payDisposition, setUnionMembeshipRequest);
 	}
 
 	public PayType getPayType() {
