@@ -1,6 +1,7 @@
 package usecases.policy.payschedule;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 import java.text.ParseException;
 import java.time.LocalDate;
