@@ -1,19 +1,15 @@
 package usecases.operations;
 
 import usecases.operations.datastructures.AddCommissionedEmployeeRequest;
-import usecases.operations.datastructures.AddEmployeeRequest;
 
-public class AddCommissionedEmployeeUsecase implements UseCase{
+public class AddCommissionedEmployeeUsecase implements UseCase<AddCommissionedEmployeeRequest>{
 
 	public AddCommissionedEmployeeUsecase(AddCommissionedEmployeeRequest addCommissionedEmployeeRequest) {
 
 	}
 
-	public void execute(AddEmployeeRequest addEmployeeRequest) {
-		// TODO Auto-generated method stub
+	public void execute(AddCommissionedEmployeeRequest addEmployeeRequest) {
 		
 	}
-
-
 
 }
