@@ -13,7 +13,7 @@ public abstract class AddEmployeeUsecase {
 	private PayType payType;
 	private UnionMembership unionMembership = null;
 	
-	private SetUnionMembershipUsecase setUnionMembershipUsecase; 
+	private SetUnionMembershipUsecase setUnionMembershipUsecase = new SetUnionMembershipUsecase(); 
 	
 	public AddEmployeeUsecase(PayDisposition payDisposition, PaySchedule paySchedule, PayType payType){
 		this.payDisposition = payDisposition;
@@ -21,7 +21,7 @@ public abstract class AddEmployeeUsecase {
 		this.payType = payType;
 	}
 
-	public void addEmployee(){
+	public void execute(){
 		if(unionMembership == null){
 			unionMembership = setUnionMembershipUsecase.getUnionMembership(null);
 		}
