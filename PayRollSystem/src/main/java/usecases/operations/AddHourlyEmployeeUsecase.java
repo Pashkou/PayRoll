@@ -3,23 +3,16 @@ package usecases.operations;
 import model.Employee;
 import usecases.operations.datastructures.AddHourlyEmployeeRequest;
 
-public class AddHourlyEmployeeUsecase implements UseCase<AddHourlyEmployeeRequest>{
+public class AddHourlyEmployeeUsecase extends AddEmployeeUsecase implements UseCase<AddHourlyEmployeeRequest> {
 	
-	public AddHourlyEmployeeUsecase() {
-
-	}
-
-	public void execute(AddHourlyEmployeeRequest addEmployeeRequest) {
-		Employee employee = new Employee(
-				addEmployeeRequest.getPayDisposition(),
-				addEmployeeRequest.getPaySchedule(),
-				addEmployeeRequest.getPayType(),
-				null,
-				addEmployeeRequest.getFirstName(),
-				addEmployeeRequest.getLastName());
-		
-		//employeeDAO - interface - save
-		//my change to test
+	public void execute(AddHourlyEmployeeRequest addHourlyEmployeeRequest) {
+		Employee employee = new Employee.Builder("Siarhei", "Pashkou").
+				payDisposition(addHourlyEmployeeRequest.getPayDisposition()).
+				paySchedule(addHourlyEmployeeRequest.getPaySchedule()).
+				payType(addHourlyEmployeeRequest.getPayType()).
+				build();
+		super.setEmployee(employee);
+		super.execute();
 	}
 	
 }
