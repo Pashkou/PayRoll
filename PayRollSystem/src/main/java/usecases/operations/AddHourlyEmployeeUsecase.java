@@ -13,10 +13,6 @@ public class AddHourlyEmployeeUsecase extends AddEmployeeUsecase implements UseC
 				build();
 		super.setEmployee(employee);
 		super.execute();
-		//test
-		//my change to test
-		//my change to test
-		//my change to test
 	}
 	
 }
