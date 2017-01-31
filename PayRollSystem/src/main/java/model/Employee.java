@@ -90,4 +90,8 @@ public class Employee {
 		this.unionMemebership = unionMemebership;
 	}
 	
+	public PayType getPayType() {
+		return payType;
+	}
+	
 }

@@ -3,7 +3,7 @@ package usecases.operations.datastructures;
 import model.interfaces.PayDisposition;
 import usecases.unionmembership.SetUnionMembeshipRequest;
 
-public abstract class AddEmployeeRequest {
+public abstract class AddEmployeeRequest extends Request {
 	
 	private PayDisposition payDisposition;
 	private SetUnionMembeshipRequest setUnionMembeshipRequest;
