@@ -12,19 +12,58 @@ public class Employee {
 	private PaySchedule paySchedule;
 	private PayType payType;
 	private UnionMembership unionMemebership;
-	
 	private String firstName;
 	private String lastName;
 	
-	public Employee(PayDisposition payDisposition, PaySchedule paySchedule, PayType payType,
-			UnionMembership unionMemebership, String firstName, String lastName) {
-		super();
-		this.payDisposition = payDisposition;
-		this.paySchedule = paySchedule;
-		this.payType = payType;
-		this.unionMemebership = unionMemebership;
-		this.firstName = firstName;
-		this.lastName = lastName;
+	private Employee(Builder builder) {
+		this.payDisposition = builder.payDisposition;
+		this.paySchedule = builder.paySchedule;
+		this.payType = builder.payType;
+		this.firstName = builder.firstName;
+		this.lastName = builder.lastName;
+	}
+	
+	public static class Builder{
+		private PayDisposition payDisposition;
+		private PaySchedule paySchedule;
+		private PayType payType;
+		private String firstName;
+		private String lastName;
+		
+		public Builder(String fistName, String lastName){
+			this.firstName = fistName;
+			this.lastName = lastName;
+		}
+		
+		public Employee build(){
+			return new Employee(this);
+		}
+	
+		public Builder payDisposition(PayDisposition payDisposition){
+			this.payDisposition = payDisposition;
+			return this;
+		}
+		
+		public Builder paySchedule(PaySchedule paySchedule){
+			this.paySchedule = paySchedule;
+			return this;
+		}
+		
+		public Builder payType(PayType payType){
+			this.payType = payType;
+			return this;
+		}
+		
+		public Builder firstName(String firstName){
+			this.firstName = firstName;
+			return this;
+		}
+		
+		public Builder lastName(String lastName){
+			this.lastName = lastName;
+			return this;
+		}
+	
 	}
 
 	public void pay(int amount){
@@ -47,5 +86,8 @@ public class Employee {
 		return paySchedule;
 	}
 	
+	public void setUnionMemebership(UnionMembership unionMemebership) {
+		this.unionMemebership = unionMemebership;
+	}
 	
 }
