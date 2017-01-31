@@ -14,7 +14,6 @@ public class AddCommissionedEmployeeUsecase extends AddEmployeeUsecase implement
 				build();
 		super.setEmployee(employee);
 		super.execute();
-		//last update
 	}
 
 }
